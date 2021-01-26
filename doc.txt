@@ -16,7 +16,9 @@ Satan
 Me
 
 player class:
-name-
+name- the name of the player
+speed- a constant that determine how fast the player character will move
+trans- the location of the player
 level-
 Health-
 Magic-
