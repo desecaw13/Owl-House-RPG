@@ -9,16 +9,13 @@ User Interface Tools
 Dramatic Narrative
 Consequences
 
-settings- Boiling Isles, Bonesborough, Hexide, The Owl House
+settings- Boiling Isles, Bonesborough, Hexide, The Owl House, https://theowlhouse.fandom.com/wiki/Category:Locations
 
-characters- https://theowlhouse.fandom.com/wiki/Category:Characters
-Satan
-Me
+characters- https://theowlhouse.fandom.com/wiki/Category:Characters, Satan, Me(note)
 
 player class:
 name- the name of the player
-speed- a constant that determine how fast the player character will move
-trans- the location of the player
+body- player's physics object
 level-
 Health-
 Magic-
