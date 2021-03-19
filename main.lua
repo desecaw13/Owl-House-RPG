@@ -1,18 +1,26 @@
-player = {}
-
+loveframes = require("loveframes")
+----[[
 function love.load()
 	world = love.physics.newWorld()
+	
 	player = {
-		body = love.physics.newBody(world, 0, 0, "dynamic"),
 		trans = love.math.newTransform(0,0),
-		image = love.graphics.newImage("img.png")
+		image = love.graphics.newImage("img.png"),--do images in sprite (batch thing)
+		ph = {}
 	}
+	player.ph.body = love.physics.newBody(world, 0, 0, "dynamic")
+	player.ph.shape = love.physics.newRectangleShape(player.image:getWidth(),player.image:getHeight())
+	player.ph.fixture = love.physics.newFixture(player.ph.body,player.ph.shape)
+	--finish physics (use phys1cs)
+	
+	tbt = loveframes.Create('button')
+	tbt:Center()-- todo
 end
 
 function love.draw()
-	--love.graphics.print()
-	-- make a table of all objects that should be rendered and go through it drawing them
+	--make a table of all objects that should be rendered and go through it drawing them
 	love.graphics.draw(player.image,player.trans)
+loveframes.draw()
 end
 
 mx,my = 0,0
@@ -21,24 +29,36 @@ function love.update(dt)
 		mx,my = love.mouse.getPosition()
 	end
 	move(player,mx,my)
-	-- calculate route (use love.physics for obstacles) between player starting point and ending point
+	--calculate route (use love.physics for obstacles) between player starting point and ending point
+world:update(dt)
+loveframes.update(dt)
 end
 
+function love.mousepressed(x, y, button)
+loveframes.mousepressed(x, y, button)
+end
+
+function love.mousereleased(x, y, button)
+loveframes.mousereleased(x, y, button)
+end
+
+speed = 2--put in player and others
 function move(obj,x,y)
-	if not (compare(x,obj.body:getX()) and compare(y,obj.body:getY())) then
-		run = x - obj.body:getX()
-		rise = y - obj.body:getY()
+	if not (compare(x,obj.ph.body:getX()) and compare(y,obj.ph.body:getY())) then
+		run = x - obj.ph.body:getX()
+		rise = y - obj.ph.body:getY()
 		mag = math.sqrt((rise^2) + (run^2))
 		vx = run / mag
 		vy = rise / mag
 		
-		obj.body:setX(obj.body:getX() + vx)
-		obj.body:setY(obj.body:getY() + vy)
-	
-		obj.trans = love.math.newTransform(obj.body:getX() - obj.image:getWidth()/2, obj.body:getY() - obj.image:getHeight()/2)
+		obj.ph.body:setX(obj.ph.body:getX() + vx*speed)
+		obj.ph.body:setY(obj.ph.body:getY() + vy*speed)
+		
+		obj.trans = love.math.newTransform(obj.ph.body:getX() - obj.image:getWidth()/2, obj.ph.body:getY() - obj.image:getHeight()/2)
 	end
 end
 
-function compare(n1,n2)
-	return (n1 < n2 + 0.5) and (n1 > n2 - 0.5)
+function compare(n1,n2)--make speed apart of params but call it margin
+	return (n1 < n2 + 0.5*speed) and (n1 > n2 - 0.5*speed)
 end
+--]]

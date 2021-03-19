@@ -1,0 +1,15 @@
+explore:
+	interaction with world-
+		use/interact with objects (doors, levers, puzzels, etc.)
+		 search containers (chests, bodies, etc.)
+		talk to people (see talk section)
+
+	move around- click and party walks there, unless not able to then just to as close as they can get. needs system to pathfind with obstacles (physics?)
+
+talk:
+	dialog system-
+	quests-
+
+fight:
+	witch duels- formal magical combat between two witches (like pokemon? turned based)
+	monster battles- combat between player party and monsters (like Ps:T, free action)
