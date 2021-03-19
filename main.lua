@@ -4,6 +4,8 @@ function love.load()
 	world = love.physics.newWorld()
 	
 	player = {
+		speed = 2,
+		
 		trans = love.math.newTransform(0,0),
 		image = love.graphics.newImage("img.png"),--do images in sprite (batch thing)
 		ph = {}
@@ -42,23 +44,22 @@ function love.mousereleased(x, y, button)
 loveframes.mousereleased(x, y, button)
 end
 
-speed = 2--put in player and others
 function move(obj,x,y)
-	if not (compare(x,obj.ph.body:getX()) and compare(y,obj.ph.body:getY())) then
+	if not (compare(x,obj.ph.body:getX(),obj.speed) and compare(y,obj.ph.body:getY(),obj.speed)) then
 		run = x - obj.ph.body:getX()
 		rise = y - obj.ph.body:getY()
 		mag = math.sqrt((rise^2) + (run^2))
 		vx = run / mag
 		vy = rise / mag
 		
-		obj.ph.body:setX(obj.ph.body:getX() + vx*speed)
-		obj.ph.body:setY(obj.ph.body:getY() + vy*speed)
+		obj.ph.body:setX(obj.ph.body:getX() + vx*obj.speed)
+		obj.ph.body:setY(obj.ph.body:getY() + vy*obj.speed)
 		
 		obj.trans = love.math.newTransform(obj.ph.body:getX() - obj.image:getWidth()/2, obj.ph.body:getY() - obj.image:getHeight()/2)
 	end
 end
 
-function compare(n1,n2)--make speed apart of params but call it margin
-	return (n1 < n2 + 0.5*speed) and (n1 > n2 - 0.5*speed)
+function compare(n1,n2, margin)
+	return (n1 < n2 + 0.5*margin) and (n1 > n2 - 0.5*margin)
 end
 --]]
