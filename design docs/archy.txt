@@ -1,0 +1,16 @@
+map- a table full of people(npcs), interacables(objects), and other general map data ()
+
+person class:
+	info:
+		name- noncode? identification
+	stats:
+		level- amount of experience
+		health- hit points
+		mana- points that are used by magic spells
+		agility- base chance of dodging
+		vitality- determines max health
+		magic essence- determines max mana
+		luck- (player only) loot amount and rarity chance modifier
+	technical:
+		body- physics objects
+		sprite-  the images that show it's physicality (currently just image and trans)
