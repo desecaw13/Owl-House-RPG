@@ -3,6 +3,7 @@ when click on interactable object (in-world button) still move but also do whate
 how to do pathfinding other both npcs and player/party
 
 todo:
-	objects and interaction with them (clicking)
+	classes- people and objects
+	interaction with things (clicking)
 	basics of the GUI
 	dialog systems
