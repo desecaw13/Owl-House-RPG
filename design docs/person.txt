@@ -1,0 +1,14 @@
+(see class in archy)
+
+- all player witches must be in the Wild witch or Emperor's coven so they can do all magic.
+- no humans except Luz and the player in BI.
+- all witches have a coven (Wild, Emperor's, Abominations, Bard, Beast Keeping, Construction, Healing, Illusions, Oracle, Plant, Potions)
+- humans will be placed into the Glyph coven and demons into the Demon coven.
+
+covens:
+	Wild coven- also known as the "Bad Girl coven".
+	Despite leading it Eda is actually a part of the glyph coven because of her curse.
+	(this is an important distinction to note as being a part of a coven in code is different than in lore because the glyph coven and demon coven aren't 'real')
+
+[Tutorial is the Convention and/or the first day of school.
+The tutorial will teach you the basics of all species/covens but also gives a more in-depth explanation depending on what species you are and what coven you pick.]

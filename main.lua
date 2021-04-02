@@ -1,5 +1,5 @@
 loveframes = require("loveframes")
-----[[
+
 function love.load()
 	world = love.physics.newWorld()
 	
@@ -62,4 +62,3 @@ end
 function compare(n1,n2, margin)
 	return (n1 < n2 + 0.5*margin) and (n1 > n2 - 0.5*margin)
 end
---]]
