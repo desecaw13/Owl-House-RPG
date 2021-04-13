@@ -12,9 +12,9 @@ person class:
 		level- amount of experience
 		health- current hit points
 		mana- current amount of magic points, which are used up by magic spells
-		agility- base chance of dodging
 		vitality- determines max health and regeneration
-		magic essence- determines max mana and regeneration
+		essence- determines max mana and regeneration
+		agility- base chance of dodging
 		luck- (player only) loot amount and rarity chance modifier
 	technical:
 		id- number or string that represents this in code

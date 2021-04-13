@@ -13,10 +13,7 @@ function love.load()
 	player.ph.body = love.physics.newBody(world, 0, 0, "dynamic")
 	player.ph.shape = love.physics.newRectangleShape(player.image:getWidth(),player.image:getHeight())
 	player.ph.fixture = love.physics.newFixture(player.ph.body,player.ph.shape)
-	--finish physics (use phys1cs)
-	
-	tbt = loveframes.Create('button')
-	tbt:Center()-- todo
+	-- do we need physics?
 end
 
 function love.draw()
