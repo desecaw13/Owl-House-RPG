@@ -2,6 +2,7 @@ https://lh3.googleusercontent.com/jGN_eHHrzgjdHi8o2kEeSkiy8b6ONuxdlCbs78Nc91MQ9s
 https://thepcgames.net/wp-content/uploads/2018/06/Planescape-Torment-Enhanced-Edition-Digital-Deluxe-pc-game-download.jpg
 
 https://developer.gnome.org/hig/stable/design-principles.html.en
+https://developer.gnome.org/hig/stable/visual-layout.html.en
 
 (G)UI design:
 	main screen- needs areas for game world, player/pary info, gameplay actions, metegame actions,
