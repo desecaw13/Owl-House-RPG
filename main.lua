@@ -1,5 +1,3 @@
-loveframes = require("loveframes")
-
 function love.load()
 	world = love.physics.newWorld()
 	
@@ -19,7 +17,6 @@ end
 function love.draw()
 	--make a table of all objects that should be rendered and go through it drawing them
 	love.graphics.draw(player.image,player.trans)
-loveframes.draw()
 end
 
 mx,my = 0,0
@@ -30,15 +27,6 @@ function love.update(dt)
 	move(player,mx,my)
 	--calculate route (use love.physics for obstacles) between player starting point and ending point
 world:update(dt)
-loveframes.update(dt)
-end
-
-function love.mousepressed(x, y, button)
-loveframes.mousepressed(x, y, button)
-end
-
-function love.mousereleased(x, y, button)
-loveframes.mousereleased(x, y, button)
 end
 
 function move(obj,x,y)
