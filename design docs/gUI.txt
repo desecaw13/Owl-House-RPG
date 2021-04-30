@@ -6,3 +6,4 @@ https://developer.gnome.org/hig/stable/visual-layout.html.en
 
 (G)UI design:
 	main screen- needs areas for game world, player/pary info, gameplay actions, metegame actions,
+	stats screen- needs areas for player sprite/image, info, stats,
