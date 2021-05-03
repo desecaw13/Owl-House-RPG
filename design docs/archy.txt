@@ -1,15 +1,31 @@
 map- a table full of people(npcs), interacables(objects), and other general map data ()
 
-prefab table with all base objects to create clones from.
+
+class ➡ instances
+ ⬇
+subclass
+
+entity ➡ things
+ ⬇
+person ➡ player
+ ⬇
+species{} ➡ people and enemies
+
+entity class:
+	name- default; 'THING'
+	pronouns- default; it/its
+	id- no default, generated, individual to each instance
+	body- none, use?
+	sprite- default; a white sqaure
 
 person class:
 	info:
 		name- for game text, [16] long string
 		gender- a joke mostly, string
-		species- enum; witch, human, demon, [more?]
-		pronouns- list of enum; they/them, she/her, he/him, it/its, none(name used), neo/custom ([8] long string)
+		species- subclass; witch, human, demon, [more?]
+		pronouns- list from enum; they/them, she/her, he/him, it/its, none(name used), neo/custom ([8] long string)
 	stats:
-		level- amount of experience
+		level- (party only) amount of experience
 		health- current hit points
 		mana- current amount of magic points, which are used up by magic spells
 		vitality- determines max health and regeneration
@@ -20,3 +36,5 @@ person class:
 		id- number or string that represents this in code
 		body- physics objects
 		sprite-  the images that show it's physicality (currently just image and trans). needs sprite and physical features
+
+species{} should be handled as both a field and subclass of person, and player is special instance of person or it's chosen species.
