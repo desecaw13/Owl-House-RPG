@@ -1,15 +1,15 @@
 map- a table full of people(npcs), interacables(objects), and other general map data ()
 
 
-class ➡ instances
- ⬇
+class → instances
+ ↓
 subclass
 
-entity ➡ things
- ⬇
-person ➡ player
- ⬇
-species{} ➡ people and enemies
+entity → things
+ ↓
+person → player
+ ↓
+species{} → people and enemies
 
 entity class:
 	name- default; 'THING'
