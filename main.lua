@@ -1,5 +1,5 @@
 function love.load()
-    world = love.physics.newWorld()
+    --world = love.physics.newWorld()
 
     player = {
         speed = 2,
@@ -28,7 +28,7 @@ function love.update(dt)
     end
     move(player, mx, my)
     -- calculate route (use love.physics for obstacles?) between player starting point and ending point
-    world:update(dt)
+    --world:update(dt)
 end
 
 function move(obj, x, y)
