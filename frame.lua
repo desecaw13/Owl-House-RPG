@@ -25,8 +25,9 @@ function love.load()
 	loveframes.load()
 end
 
+ -- TODO move things
 function loveframes.load()
-	loveframes.SetActiveSkin('Dark red') -- TODO move things
+	loveframes.SetActiveSkin('Dark red')
 
 	local f = loveframes.Create('frame')
 	f:SetSize(love.graphics.getDimensions())
