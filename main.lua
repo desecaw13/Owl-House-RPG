@@ -18,7 +18,7 @@ end
 
 function love.draw()
     -- make a table of all objects that should be rendered and go through it, drawing them
-    love.graphics.draw(player.image, player.x, player.y, 0, 0.25, 0.25)
+    love.graphics.draw(player.image, player.x - player.image:getWidth() / 2, player.y - player.image:getHeight())
 end
 
 mx, my = 0, 0
