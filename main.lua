@@ -1,3 +1,5 @@
+gui = require 'GUI'
+
 function love.load()
     --world = love.physics.newWorld()
 
