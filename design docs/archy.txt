@@ -15,8 +15,8 @@ entity class:
 	name- default; 'THING'
 	pronouns- default; it/its
 	id- no default, generated, individual to each instance
-	body- none, use?
-	sprite- default; a white sqaure
+	x,y- coordinate position
+	sprite- default; [?]
 
 person class:
 	info:
@@ -25,16 +25,16 @@ person class:
 		species- subclass; witch, human, demon, [more?]
 		pronouns- list from enum; they/them, she/her, he/him, it/its, none(name used), neo/custom ([8] long string)
 	stats:
-		level- (party only) amount of experience
+		level- (party only ?) amount of experience
 		health- current hit points
 		mana- current amount of magic points, which are used up by magic spells
 		vitality- determines max health and regeneration
 		essence- determines max mana and regeneration
 		agility- base chance of dodging
-		luck- (player only) loot amount and rarity chance modifier
+		luck- (player only ?) loot amount and rarity chance modifier
 	technical:
 		id- number or string that represents this in code
-		body- physics objects
-		sprite-  the images that show it's physicality (currently just image and trans). needs sprite and physical features
+		speed- how fast to move across screen; default is 2
+		sprite-  the images that show it's physicality (currently just image). needs sprite and physical features
 
-species{} should be handled as both a field and subclass of person, and player is special instance of person or it's chosen species.
+species{}- should be handled as both a field and subclass of person, and player is special instance of person or it's chosen species.
