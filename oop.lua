@@ -1,20 +1,18 @@
 local oop = {} -- contains classes, not instances
 
-local mt = {
-	--__name dosn't work (lua 5.1)
-	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end
-}
-
-local entity = {
+oop.entity = {
 	name = 'THING',
 	pn = 'it/its',--{}
 	--id = --generate for each instance ?
 	x = 0, y = 0,
 	sprite = 'image'--default is [?]
 }
-setmetatable(entity, mt)
+setmetatable(oop.entity, {
+	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end,
+	__index = oop.entity
+	})
 
-local person = entity{
+oop.person = oop.entity{
 	name = 'NAME',
 	pn = 'they/them',--{}
 	gender = 'DEFAULT',
@@ -28,10 +26,9 @@ local person = entity{
 	luck = 1,
 	speed = 2
 }
-setmetatable(person, mt)
-
-oop.entity = entity --hm, no likey
-
-oop.person = person
+setmetatable(oop.person, {
+	__call = function (self, o) return setmetatable(o or entity(), {__index = self}) end,
+	__index = oop.person
+	})
 
 return oop

@@ -9,7 +9,7 @@ function love.load()
 
 	ent = oop.entity{}
 
-	for i in pairs(oop.person) do print(i,oop.entity[i]) end
+	for i in pairs(oop.person or nil) do print(i,oop.entity[i]) end
 	for i in pairs(oop.entity) do print(i,oop.entity[i]) end
 	print()
 	for i in pairs(oop.person) do print(i,ent[i]) end
