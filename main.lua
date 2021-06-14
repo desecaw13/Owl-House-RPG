@@ -4,7 +4,7 @@ oop = require('oop')
 
 function love.load()
 	player = oop.person{
-		image = love.graphics.newImage("tmpluz.png"),--TODO images in sprite (batch thing)
+		sprite = love.graphics.newImage("tmpluz.png"),--TODO images in sprite (batch thing)
 	}
 
 	ent = oop.entity{}
@@ -26,7 +26,7 @@ end
 
 function love.draw()
 	-- make a table of all objects that should be rendered and go through it, drawing them
-	love.graphics.draw(player.image, player.x - player.image:getWidth() / 2, player.y - player.image:getHeight())
+	love.graphics.draw(player.sprite, player.x - player.sprite:getWidth() / 2, player.y - player.sprite:getHeight())
 end
 
 mx, my = 0, 0 --how to better?
