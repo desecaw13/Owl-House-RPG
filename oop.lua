@@ -2,8 +2,7 @@ local oop = {} -- contains classes, not instances
 
 oop.entity = {
 	name = 'THING',
-	pn = 'it/its',--{}
-	--id = --generate for each instance ?
+	pn = 'it/its',-- todo with actual grammer
 	x = 0, y = 0,
 	sprite = 'image'--default is [?]
 }

@@ -1,5 +1,5 @@
 loveframes = require('loveframes')
---gui = require('gui')
+gui = require('gui')
 oop = require('oop')
 
 function love.load()
@@ -7,26 +7,14 @@ function love.load()
 		sprite = love.graphics.newImage("tmpluz.png"),--TODO images in sprite (batch thing)
 	}
 
-	ent = oop.entity{}
-
-	for i in pairs(oop.person or nil) do print(i,oop.entity[i]) end
-	for i in pairs(oop.entity) do print(i,oop.entity[i]) end
-	print()
-	for i in pairs(oop.person) do print(i,ent[i]) end
-	for i in pairs(oop.entity) do print(i,ent[i]) end
-	print('--')
-	for i in pairs(oop.person) do print(i,oop.person[i]) end
-	for i in pairs(oop.entity) do print(i,oop.person[i]) end
-	print()
-	for i in pairs(oop.person) do print(i,player[i]) end
-	for i in pairs(oop.entity) do print(i,player[i]) end
-
 	loveframes.SetActiveSkin('Dark red')
 end
 
 function love.draw()
 	-- make a table of all objects that should be rendered and go through it, drawing them
 	love.graphics.draw(player.sprite, player.x - player.sprite:getWidth() / 2, player.y - player.sprite:getHeight())
+
+	loveframes.draw()
 end
 
 mx, my = 0, 0 --how to better?
@@ -36,11 +24,32 @@ function love.update(dt)
 	end
 	move(player, mx, my) --TODO don't call every frame, only when moveing ?
 	-- calculate route, around obstacles, between player starting point and ending point
+
+	loveframes.update(dt)
 end
 
-function love.keypressed(key)
-	if key == 'e' then --oop.[[currently selected object or player]]:openStats() end
+function love.mousepressed(x, y, button)
+	loveframes.mousepressed(x, y, button)
+end
+
+function love.mousereleased(x, y, button)
+	loveframes.mousereleased(x, y, button)
+end
+
+function love.keypressed(key, scancode, isrepeat)
+	if key == 'e' and not gui.isOpen then
+		gui.openStat(player)
 	end
+
+	loveframes.keypressed(key, isrepeat)
+end
+
+function love.keyreleased(key)
+	loveframes.keyreleased(key)
+end
+
+function love.textinput(text)
+	loveframes.textinput(text)
 end
 
 function move(obj, x, y)
