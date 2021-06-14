@@ -14,7 +14,6 @@ species{} → people and enemies
 entity class:
 	name- default; 'THING'
 	pronouns- default; it/its
-	id- no default, generated, individual to each instance
 	x,y- coordinate position
 	sprite- default; [?]
 
@@ -33,7 +32,6 @@ person class:
 		agility- base chance of dodging
 		luck- (player only ?) loot amount and rarity chance modifier
 	technical:
-		id- number or string that represents this in code
 		speed- how fast to move across screen; default is 2
 		sprite-  the images that show it's physicality (currently just image). needs sprite and physical features
 
