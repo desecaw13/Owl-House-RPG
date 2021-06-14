@@ -9,10 +9,9 @@ oop.entity = {
 }
 setmetatable(oop.entity, {
 	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end,
-	__index = oop.entity
 	})
 
-oop.person = oop.entity{
+oop.person = {
 	name = 'NAME',
 	pn = 'they/them',--{}
 	gender = 'DEFAULT',
@@ -27,8 +26,8 @@ oop.person = oop.entity{
 	speed = 2
 }
 setmetatable(oop.person, {
-	__call = function (self, o) return setmetatable(o or entity(), {__index = self}) end,
-	__index = oop.person
+	__call = function (self, o) return setmetatable(oop.entity(o), {__index = self}) end,
+	__index = oop.entity
 	})
 
 return oop
