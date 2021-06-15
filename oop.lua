@@ -1,16 +1,23 @@
 local oop = {} -- contains classes, not instances
 
-oop.entity = {
+oop.newImage = function (filename) return loveframes.Create('imagebutton'):SetImage(filename):SetText(''):SizeToImage() end -- move to gui ?
+
+oop.map = setmetatable({
+	name = 'PLACE'
+}, {
+	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end
+})
+
+oop.entity = setmetatable({
 	name = 'THING',
 	pn = 'it/its',-- todo with actual grammer
 	x = 0, y = 0,
-	sprite = 'image'--default is [?]
-}
-setmetatable(oop.entity, {
-	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end,
+	sprite = oop.newImage('devTexture.png')
+}, {
+	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end
 	})
 
-oop.person = {
+oop.person = setmetatable({
 	name = 'NAME',
 	pn = 'they/them',--{}
 	gender = 'DEFAULT',
@@ -23,8 +30,7 @@ oop.person = {
 	agility = 1,
 	luck = 1,
 	speed = 2
-}
-setmetatable(oop.person, {
+}, {
 	__call = function (self, o) return setmetatable(oop.entity(o), {__index = self}) end,
 	__index = oop.entity
 	})
