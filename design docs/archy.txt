@@ -15,7 +15,7 @@ entity class:
 	name- default; 'THING'
 	pronouns- default; it/its
 	x,y- coordinate position
-	sprite- default; [?]
+	sprite- default; devTexture.png
 
 person class:
 	info:

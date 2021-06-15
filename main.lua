@@ -4,16 +4,17 @@ oop = require('oop')
 
 function love.load()
 	player = oop.person{
-		sprite = love.graphics.newImage("tmpluz.png"),--TODO images in sprite (batch thing)
+		sprite = oop.newImage('tmpluz.png')--TODO images in sprite (batch thing)
 	}
+
+	ent = oop.entity{x=100, y=100}
+	ent.sprite:SetPos(ent.x, ent.y)
+	-- TODO figure out how to have imgBut move better
 
 	loveframes.SetActiveSkin('Dark red')
 end
 
 function love.draw()
-	-- make a table of all objects that should be rendered and go through it, drawing them
-	love.graphics.draw(player.sprite, player.x - player.sprite:getWidth() / 2, player.y - player.sprite:getHeight())
-
 	loveframes.draw()
 end
 
@@ -23,6 +24,7 @@ function love.update(dt)
 		mx, my = love.mouse.getPosition()
 	end
 	move(player, mx, my) --TODO don't call every frame, only when moveing ?
+	player.sprite:SetPos(player.x - player.sprite:GetWidth() / 2, player.y - player.sprite:GetHeight() / 2)--move to move()?
 	-- calculate route, around obstacles, between player starting point and ending point
 
 	loveframes.update(dt)
