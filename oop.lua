@@ -13,9 +13,24 @@ oop.entity = setmetatable({
 	pn = 'it/its',-- todo with actual grammer
 	x = 0, y = 0,
 	sprite = oop.newImage('devTexture.png')
+	
 }, {
 	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end
 	})
+function oop.entity.move(self, x, y)
+	if not (compare(x, self.x, self.speed) and compare(y, self.y, self.speed)) then
+		run = x - self.x
+		rise = y - self.y
+		mag = math.sqrt((rise ^ 2) + (run ^ 2))
+		vx = run / mag
+		vy = rise / mag
+
+		self.x = self.x + vx * self.speed
+		self.y = self.y + vy * self.speed
+    end
+	
+	self.sprite:SetPos(self.x - self.sprite:GetWidth() / 2, self.y - self.sprite:GetHeight() / 2)
+end
 
 oop.person = setmetatable({
 	name = 'NAME',

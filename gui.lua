@@ -58,7 +58,7 @@ local gui = {
 
 		local imgP = loveframes.Create('panel', f)
 		imgP:SetPos(565, 50):SetSize(200, 300)
-		local img = loveframes.Create('image', imgP):SetImage(ent.sprite):Center() -- placeholder
+		local img = loveframes.Create('image', imgP):SetImage(ent.sprite:GetImage()):Center() -- placeholder
 
 		local barP = loveframes.Create('panel', f)
 		barP:SetPos(320, 50):SetSize(210, 130)
