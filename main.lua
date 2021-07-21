@@ -3,6 +3,8 @@ gui = require('gui')
 oop = require('oop')
 
 function love.load()
+	paused = false
+
 	player = oop.person{
 		sprite = oop.newImage('tmpluz.png')--TODO images in sprite (batch thing)
 	}
@@ -19,11 +21,11 @@ end
 
 mx, my = 0, 0 --how to better?
 function love.update(dt)
-	if love.mouse.isDown(1) then
+	if love.mouse.isDown(1) and not paused and not loveframes.hoverobject then
 		mx, my = love.mouse.getPosition()
 		there = false
 	end
-	if not there then
+	if not there and not paused then
 		there = player:move(mx, my) -- make there a prop of player/entity ?
 	end
 	loveframes.update(dt)
@@ -51,7 +53,12 @@ end
 
 function love.keypressed(key, scancode, isrepeat)
 	if key == 'e' and not gui.isOpen then
+		paused = true
 		gui.openStat(player)
+	elseif key == 'e' then
+		paused = false
+		gui.isOpen:Remove()
+		gui.isOpen = false
 	end
 
 	loveframes.keypressed(key, isrepeat)

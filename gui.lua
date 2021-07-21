@@ -2,8 +2,6 @@ local gui = {
 	isOpen = false,
 
 	openStat = function(ent)
-		gui.isOpen = true
-
 		local f = loveframes.Create('frame')
 		f:SetSize(love.graphics.getDimensions())
 		f:SetName('Stat Sheet')
@@ -68,6 +66,8 @@ local gui = {
 		local hb = newPBS('Health', ent.health, 35, 55, barP)
 
 		local mb = newPBS('Mana', ent.mana, 35, 90, barP)
+		
+		gui.isOpen = f
 	end
 }
 return gui
