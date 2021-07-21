@@ -3,8 +3,9 @@ local oop = {} -- contains classes, not instances
 oop.newImage = function(filename)
 	local img = loveframes.Create('image'):SetImage(filename)
 	local m = loveframes.Create('menu')
-	m:AddOption('Move to', false, function() mx=m:GetX() my=m:GetY() there=false end) -- this is bad code i know
-	m:AddOption('text', false, function() end)
+	m:AddOption('Move to', false, function() mx=img:GetX()+img:GetWidth()/2 my=img:GetY()+img:GetHeight()/2 there=false end) -- this is bad code i know
+	m:AddOption('Attack', false, function() player:attack() end) -- how to get target ?
+	--m:AddOption('text', false, function() end)
 	m:SetVisible(false)
 	img.menu = m
 	return img
@@ -21,6 +22,7 @@ oop.entity = setmetatable({
 	pn = 'it/its',-- todo with actual grammer
 	x = 0, y = 0,
 	sprite = oop.newImage('devTexture.png')
+
 	
 }, {
 	__call = function(self, o) return setmetatable(o or {}, {__index = self}) end
