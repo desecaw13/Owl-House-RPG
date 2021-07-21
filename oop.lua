@@ -3,6 +3,7 @@ local oop = {} -- contains classes, not instances
 oop.newImage = function(filename)
 	local img = loveframes.Create('image'):SetImage(filename)
 	local m = loveframes.Create('menu')
+	m:AddOption('Move to', false, function() mx=m:GetX() my=m:GetY() there=false end) -- this is bad code i know
 	m:AddOption('text', false, function() end)
 	m:SetVisible(false)
 	img.menu = m
