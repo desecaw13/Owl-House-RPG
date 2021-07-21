@@ -1,7 +1,7 @@
 local gui = {
 	isOpen = false,
 
-	openStat = function (ent)
+	openStat = function(ent)
 		gui.isOpen = true
 
 		local f = loveframes.Create('frame')

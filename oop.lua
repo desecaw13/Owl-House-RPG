@@ -1,11 +1,18 @@
 local oop = {} -- contains classes, not instances
 
-oop.newImage = function (filename) return loveframes.Create('imagebutton'):SetImage(filename):SetText(''):SizeToImage() end -- move to gui ?
+oop.newImage = function(filename)
+	local img = loveframes.Create('image'):SetImage(filename)
+	local m = loveframes.Create('menu')
+	m:AddOption('text', false, function() end)
+	m:SetVisible(false)
+	img.menu = m
+	return img
+end
 
 oop.map = setmetatable({
 	name = 'PLACE'
 }, {
-	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end
+	__call = function(self, o) return setmetatable(o or {}, {__index = self}) end
 })
 
 oop.entity = setmetatable({
@@ -15,7 +22,7 @@ oop.entity = setmetatable({
 	sprite = oop.newImage('devTexture.png')
 	
 }, {
-	__call = function (self, o) return setmetatable(o or {}, {__index = self}) end
+	__call = function(self, o) return setmetatable(o or {}, {__index = self}) end
 	})
 function oop.entity.move(self, x, y)
 	if not (compare(x, self.x, self.speed) and compare(y, self.y, self.speed)) then
@@ -27,9 +34,16 @@ function oop.entity.move(self, x, y)
 
 		self.x = self.x + vx * self.speed
 		self.y = self.y + vy * self.speed
+		
+		self.sprite:SetPos(self.x - self.sprite:GetWidth() / 2, self.y - self.sprite:GetHeight() / 2)
+		self.sprite.menu:SetPos(self.x, self.y)
+	else
+		return true
     end
-	
-	self.sprite:SetPos(self.x - self.sprite:GetWidth() / 2, self.y - self.sprite:GetHeight() / 2)
+end
+--oop.entity.teleport(self, x, y)
+function oop.entity.damage(self, n)
+	self.health = self.health - n
 end
 
 oop.person = setmetatable({
@@ -46,8 +60,13 @@ oop.person = setmetatable({
 	luck = 1,
 	speed = 2
 }, {
-	__call = function (self, o) return setmetatable(oop.entity(o), {__index = self}) end,
+	__call = function(self, o) return setmetatable(oop.entity(o), {__index = self}) end,
 	__index = oop.entity
 	})
+function oop.person.attack(self, target) -- tmp because of spells
+	-- check if can attack, then agility vs [spell's OR self's] to-hit(?)
+	-- if can attack then do
+	target:damage(5)
+end
 
 return oop
