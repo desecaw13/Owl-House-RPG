@@ -9,7 +9,6 @@ function love.load()
 
 	ent = oop.entity{x=100, y=100}
 	ent.sprite:SetPos(ent.x, ent.y)
-	-- TODO figure out how to have imgBut move better (what if a sleectable object like [loveframe checkbox])
 
 	loveframes.SetActiveSkin('Dark red')
 end
@@ -22,15 +21,28 @@ mx, my = 0, 0 --how to better?
 function love.update(dt)
 	if love.mouse.isDown(1) then
 		mx, my = love.mouse.getPosition()
+		there = false
 	end
-	player:move(mx, my) --TODO don't call every frame, only when moveing ?
-	-- calculate route, around obstacles, between player starting point and ending point
-
+	if not there then
+		there = player:move(mx, my) -- make there a prop of player/entity ?
+	end
 	loveframes.update(dt)
 end
 
 function love.mousepressed(x, y, button)
+	--[[
+	have clicking on img open a menu and only move then if the "move to" option is clicked.
+	make a new loop where every frame check if player is at desired location and if not then move and stop moving if it is.
+	]]
+
 	loveframes.mousepressed(x, y, button)
+	
+	local menu = loveframes.hoverobject and loveframes.hoverobject.menu
+	if menu and button == 2 then
+		menu:SetPos(x, y)
+		menu:SetVisible(true)
+		menu:MoveToTop()
+	end
 end
 
 function love.mousereleased(x, y, button)
