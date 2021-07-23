@@ -5,12 +5,14 @@ oop = require('oop')
 function love.load()
 	paused = false
 
-	player = oop.person{
-		sprite = oop.newImage('tmpluz.png')--TODO images in sprite (batch thing)
-	}
+	player = oop.person()
+	player:setImage('tmpluz.png')--TODO images in sprite (batch thing)
 
-	ent = oop.entity{x=100, y=100}
-	ent.sprite:SetPos(ent.x, ent.y)
+	--ent = oop.entity{x=100, y=100}
+	--ent:teleport(ent.x, ent.y)
+	npc = oop.person{x=100, y=100}
+	npc:setImage('devTexture.png')
+	npc:teleport(npc.x, npc.y)
 
 	loveframes.SetActiveSkin('Dark red')
 end
@@ -26,16 +28,12 @@ function love.update(dt)
 		there = false
 	end
 	if not there and not paused then
-		there = player:move(mx, my) -- make there a prop of player/entity ?
+		there = player:move(mx, my) -- make "there" a prop of player/entity ?
 	end
 	loveframes.update(dt)
 end
 
 function love.mousepressed(x, y, button)
-	--[[
-	have clicking on img open a menu and only move then if the "move to" option is clicked.
-	make a new loop where every frame check if player is at desired location and if not then move and stop moving if it is.
-	]]
 
 	loveframes.mousepressed(x, y, button)
 	

@@ -1,16 +1,5 @@
 local oop = {} -- contains classes, not instances
 
-oop.newImage = function(filename)
-	local img = loveframes.Create('image'):SetImage(filename)
-	local m = loveframes.Create('menu')
-	m:AddOption('Move to', false, function() mx=img:GetX()+img:GetWidth()/2 my=img:GetY()+img:GetHeight()/2 there=false end) -- this is bad code i know
-	m:AddOption('Attack', false, function() player:attack() end) -- how to get target ?
-	--m:AddOption('text', false, function() end)
-	m:SetVisible(false)
-	img.menu = m
-	return img
-end
-
 oop.map = setmetatable({
 	name = 'PLACE'
 }, {
@@ -21,9 +10,7 @@ oop.entity = setmetatable({
 	name = 'THING',
 	pn = 'it/its',-- todo with actual grammer
 	x = 0, y = 0,
-	sprite = oop.newImage('devTexture.png')
 
-	
 }, {
 	__call = function(self, o) return setmetatable(o or {}, {__index = self}) end
 	})
@@ -44,9 +31,21 @@ function oop.entity.move(self, x, y)
 		return true
     end
 end
---oop.entity.teleport(self, x, y)
-function oop.entity.damage(self, n)
-	self.health = self.health - n
+oop.entity.teleport = function(self, x, y)
+	self.x = x
+	self.y = y
+	self.sprite:SetPos(x, y)
+end
+oop.entity.setImage = function(self, filename)
+	local img = loveframes.Create('image'):SetImage(filename)
+	local m = loveframes.Create('menu') -- todo how to make menu diffrent for each entity
+	m:AddOption('Move to', false, function() mx=img:GetX()+img:GetWidth()/2 my=img:GetY()+img:GetHeight()/2 there=false end) -- this is bad code i know
+	m:AddOption('Interact', false, function() print(self,self.name) end) -- might become a submenu
+	--m:AddOption('text', false, function(self, text) end)
+	m:SetVisible(false)
+	--m.owner = self
+	img.menu = m
+	self.sprite = img
 end
 
 oop.person = setmetatable({
@@ -66,10 +65,10 @@ oop.person = setmetatable({
 	__call = function(self, o) return setmetatable(oop.entity(o), {__index = self}) end,
 	__index = oop.entity
 	})
-function oop.person.attack(self, target) -- tmp because of spells
-	-- check if can attack, then agility vs [spell's OR self's] to-hit(?)
-	-- if can attack then do
-	target:damage(5)
+function oop.person.damage(self, n)
+-- check if can attack, then agility vs [spell's OR self's] to-hit(?)
+-- if can attack then do
+	self.health = self.health - n
 end
 
 return oop
