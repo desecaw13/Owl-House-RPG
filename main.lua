@@ -3,14 +3,13 @@ gui = require('gui')
 oop = require('oop')
 
 function love.load()
-	paused = false
-
 	player = oop.person()
 	player:setImage('tmpluz.png')--TODO images in sprite (batch thing)
 
-	--ent = oop.entity{x=100, y=100}
-	--ent:teleport(ent.x, ent.y)
-	npc = oop.person{x=100, y=100}
+	ent = oop.entity{x=100, y=100}
+	ent:setImage('devTexture.png')
+	ent:teleport(ent.x, ent.y)
+	npc = oop.person{x=200, y=200}
 	npc:setImage('devTexture.png')
 	npc:teleport(npc.x, npc.y)
 
@@ -21,13 +20,13 @@ function love.draw()
 	loveframes.draw()
 end
 
-mx, my = 0, 0 --how to better?
+mx, my = 0, 0 --how to better? put in class?
 function love.update(dt)
-	if love.mouse.isDown(1) and not paused and not loveframes.hoverobject then
+	if love.mouse.isDown(1) and not gui.isOpen and not loveframes.hoverobject then
 		mx, my = love.mouse.getPosition()
 		there = false
 	end
-	if not there and not paused then
+	if not there and not gui.isOpen then
 		there = player:move(mx, my) -- make "there" a prop of player/entity ?
 	end
 	loveframes.update(dt)

@@ -1,3 +1,4 @@
+-- make individual files?
 local oop = {} -- contains classes, not instances
 
 oop.map = setmetatable({
@@ -43,7 +44,6 @@ oop.entity.setImage = function(self, filename)
 	m:AddOption('Interact', false, function() print(self,self.name) end) -- might become a submenu
 	--m:AddOption('text', false, function(self, text) end)
 	m:SetVisible(false)
-	--m.owner = self
 	img.menu = m
 	self.sprite = img
 end
