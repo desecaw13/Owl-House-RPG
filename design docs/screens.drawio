@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-10-06T20:47:04.345Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="o_OVJnLMZv6ge3GcnGp9" version="15.4.3" type="github" pages="4">
+<mxfile host="app.diagrams.net" modified="2021-10-06T22:05:50.211Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36" etag="bRjbU3neFfNks7jbRGCP" version="15.4.3" type="github" pages="4">
   <diagram id="HOz_D86VpV3s0dzUtA75" name="Stats">
     <mxGraphModel dx="2622" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
       <root>
@@ -189,6 +189,18 @@
         </mxCell>
         <mxCell id="DUMAZp11l_TpvuPn_qH4-6" value="" style="whiteSpace=wrap;html=1;strokeColor=#373737;fillColor=#202020;fontColor=#505050;" vertex="1" parent="DUMAZp11l_TpvuPn_qH4-1">
           <mxGeometry x="60" y="75" width="680" height="425" as="geometry" />
+        </mxCell>
+        <mxCell id="B3TLBsK-la_COVA_QY7J-0" value="" style="whiteSpace=wrap;html=1;strokeColor=#373737;fillColor=#202020;fontColor=#505050;" vertex="1" parent="DUMAZp11l_TpvuPn_qH4-1">
+          <mxGeometry x="90" y="100" width="620" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tOPeEGCMkDj_P4n3f4cz-2" value="" style="whiteSpace=wrap;html=1;strokeColor=#373737;fillColor=#202020;fontColor=#505050;" vertex="1" parent="DUMAZp11l_TpvuPn_qH4-1">
+          <mxGeometry x="90" y="190" width="620" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tOPeEGCMkDj_P4n3f4cz-3" value="" style="whiteSpace=wrap;html=1;strokeColor=#373737;fillColor=#202020;fontColor=#505050;" vertex="1" parent="DUMAZp11l_TpvuPn_qH4-1">
+          <mxGeometry x="90" y="280" width="620" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="tOPeEGCMkDj_P4n3f4cz-5" value="" style="whiteSpace=wrap;html=1;strokeColor=#373737;fillColor=#202020;fontColor=#505050;" vertex="1" parent="DUMAZp11l_TpvuPn_qH4-1">
+          <mxGeometry x="90" y="370" width="620" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
