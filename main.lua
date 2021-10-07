@@ -3,6 +3,8 @@ gui = require('gui')
 oop = require('oop')
 
 function love.load()
+	--gui.openStart() -- main menu
+	
 	player = oop.person()
 	player:setImage('tmpluz.png')--TODO images in sprite (batch thing)
 
@@ -67,6 +69,10 @@ end
 
 function love.textinput(text)
 	loveframes.textinput(text)
+end
+
+function love.wheelmoved(x, y)
+	loveframes.wheelmoved(x, y)
 end
 
 function compare(n1, n2, margin)
