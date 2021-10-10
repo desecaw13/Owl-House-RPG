@@ -1,5 +1,5 @@
 local gui = {}
-
+--todo: loveframes' state system
 gui.isOpen = false
 
 gui.openStart = function()
@@ -87,8 +87,8 @@ gui.openCredits = function()
 			image = nil
 		},
 		{
-			name = 'Contributors to loveframes',
-			desc = 'For the GUI',
+			name = 'Kenny Shields and contributors',
+			desc = 'For the GUI LoveFrames',
 			url = 'fork?',
 			image = nil
 		},

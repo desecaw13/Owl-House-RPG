@@ -3,7 +3,7 @@ gui = require('gui')
 oop = require('oop')
 
 function love.load()
-	--gui.openStart() -- main menu
+	gui.openStart() -- main menu
 	
 	player = oop.person()
 	player:setImage('tmpluz.png')--TODO images in sprite (batch thing)
