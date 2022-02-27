@@ -1,6 +1,6 @@
 when click on interactable object (in-world button) still move but also do whatever the object/button does (eg. open chest inventory)
 
-how to do pathfinding other both npcs and player/party
+how to do pathfinding other both npcs and player/party [Dijkstra, AStar, ?]
 
 todo:
 	classes- people and objects

@@ -6,7 +6,6 @@ local function compare(n1, n2, margin)
 	return (n1 < n2 + 0.5 * margin) and (n1 > n2 - 0.5 * margin)
 end
 
--- make individual files?
 local oop = {} -- contains classes, not instances
 
 oop.init = function(lf)
@@ -21,7 +20,7 @@ oop.map = setmetatable({
 
 oop.entity = setmetatable({
 	name = 'THING',
-	pn = 'it/its',-- todo with actual grammer
+	pn = 'it/its',
 	x = 0, y = 0,
 
 }, {
@@ -52,7 +51,7 @@ end
 oop.entity.setImage = function(self, filename)
 	local img = loveframes.Create('image'):SetImage(filename)
 	local m = loveframes.Create('menu') -- todo: how to make menu diffrent for each entity
-	m:AddOption('Move to', false, function() mx=img:GetX()+img:GetWidth()/2 my=img:GetY()+img:GetHeight()/2 there=false end) -- this is bad.
+	m:AddOption('Move to', false, function() mx=img:GetX()+img:GetWidth()/2 my=img:GetY()+img:GetHeight()/2 there=false end) -- this is bad
 	m:AddOption('Interact', false, function() print(self,self.name) end) -- might become a submenu
 	--m:AddOption('text', false, function(self, text) end)
 	m:SetVisible(false)
@@ -63,7 +62,7 @@ end
 
 oop.person = setmetatable({
 	name = 'NAME',
-	pn = 'they/them',--{}
+	pn = 'they/them',
 	gender = 'DEFAULT',
 	species = 'TODO',
 	level = 1,
