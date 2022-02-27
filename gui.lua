@@ -1,6 +1,13 @@
+local ipairs = ipairs
+local loveframes = nil
+
 local gui = {}
 --todo: loveframes' state system
 gui.isOpen = false
+
+gui.init = function(lf)
+	loveframes = lf
+end
 
 gui.openStart = function()
 	local f = loveframes.Create('frame')
@@ -67,10 +74,10 @@ gui.openCredits = function()
 	local p = loveframes.Create('list', f):SetSize(680, 425):SetPos(60, 75)
 	p:SetPadding(30):SetSpacing(30)
 
-	ct = {
+	local ct = {
 		{
 			name = 'LÖVE',
-			desc = 'For the engine, its documentation, and its forum',
+			desc = 'For the framework, its documentation, and its forum',
 			url = 'https://love2d.org/',
 			image = nil
 		},
