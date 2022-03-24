@@ -1,15 +1,9 @@
 map- a table full of people(npcs), interacables(objects), and other general map data ()
 
 
-class → instances
- ↓
-subclass
-
 entity → things
  ↓
-person → player
- ↓
-species{} → people and enemies
+person → player, people, and enemies
 
 entity class:
 	name- default; 'THING'
@@ -21,7 +15,7 @@ person class:
 	info:
 		name- for game text, [16] long string
 		gender- a joke mostly, string
-		species- subclass; witch, human, demon, [more?]
+		species- interface; witch, human, demon, [more?]
 		pronouns- list from enum; they/them, she/her, he/him, it/its, none(name used), neo/custom ([8] long string)
 	stats:
 		level- (party only ?) amount of experience
@@ -33,6 +27,4 @@ person class:
 		luck- (player only ?) loot amount and rarity chance modifier
 	technical:
 		speed- how fast to move across screen; default is 2
-		sprite-  the images that show it's physicality (currently just image). needs sprite and physical features
-
-species{}- should be handled as both a field and subclass of person, and player is special instance of person or it's chosen species.
+		sprite- the images that show it's physicality (currently just image). needs sprite and physical features

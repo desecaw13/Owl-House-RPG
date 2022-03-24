@@ -1,53 +1,24 @@
-local loveframes = require('loveframes')
-local gui = require('gui')
-local oop = require('oop')
-
-local ents = {} -- entities
+local lf = require('external.loveframes')
+local view = require('view')
+local logic = require('logic')
 
 function love.load()
-	gui.init(loveframes)
-	gui.openStart() -- creates and displays main menu
-	
-	oop.init(loveframes)
-
-	local p = oop.person()
-	p:setImage('tmpluz.png')--TODO images in sprite (batch thing)
-	ents.player = p
-
-	local ent = oop.entity{x=100, y=100}
-	ent:setImage('devTexture.png')
-	ents.thing = ent
-
-	local npc = oop.person{x=200, y=200}
-	npc:setImage('devTexture.png')
-	ents.npc = npc
-
-	loveframes.SetActiveSkin('Dark red')
+	lf.SetActiveSkin('Dark red')
 end
 
 function love.draw()
-	loveframes.draw()
+	lf.draw()
 end
 
-mx, my = 0, 0 --how to better? put in class? make them local
-there = nil
-
 function love.update(dt)
-	if love.mouse.isDown(1) and not gui.isOpen and not loveframes.hoverobject then
-		mx, my = love.mouse.getPosition()
-		there = false
-	end
-	if not there and not gui.isOpen then
-		there = ents.player:move(mx, my) -- make `there` a prop of player/entity ?
-	end
-	loveframes.update(dt)
+	lf.update(dt)
 end
 
 function love.mousepressed(x, y, button)
-
-	loveframes.mousepressed(x, y, button)
+	lf.mousepressed(x, y, button)
 	
-	local menu = loveframes.hoverobject and loveframes.hoverobject.menu
+	-- fix for lf menus
+	local menu = lf.hoverobject and lf.hoverobject.menu
 	if menu and button == 2 then
 		menu:SetPos(x, y)
 		menu:SetVisible(true)
@@ -56,32 +27,21 @@ function love.mousepressed(x, y, button)
 end
 
 function love.mousereleased(x, y, button)
-	loveframes.mousereleased(x, y, button)
+	lf.mousereleased(x, y, button)
 end
 
-local paused = nil
-
 function love.keypressed(key, scancode, isrepeat)
-	if key == 'e' and not gui.isOpen then
-		paused = true
-		gui.openStat(ents.player)
-	elseif key == 'e' then
-		paused = false
-		gui.isOpen:Remove()
-		gui.isOpen = false
-	end
-
-	loveframes.keypressed(key, isrepeat)
+	lf.keypressed(key, isrepeat)
 end
 
 function love.keyreleased(key)
-	loveframes.keyreleased(key)
+	lf.keyreleased(key)
 end
 
 function love.textinput(text)
-	loveframes.textinput(text)
+	lf.textinput(text)
 end
 
 function love.wheelmoved(x, y)
-	loveframes.wheelmoved(x, y)
+	lf.wheelmoved(x, y)
 end

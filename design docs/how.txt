@@ -7,3 +7,4 @@ todo:
 	interaction with things (clicking)
 	basics of the GUI
 	dialog systems
+	everything
