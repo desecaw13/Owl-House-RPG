@@ -1,29 +1,21 @@
-turn based and party OR real time and person to person
+[witch duels- formal magical combat between two witches (turned based)
+monster battles- combat between player party and monsters (free action)]
 
-witch duels- formal magical combat between two witches (like pokemon, turned based)
-monster battles- combat between player party and monsters (like Ps:T, free action)
-[see paper]
+styles: D&D, PsT, undertale, wizards 101, pokemon
 
-steps for tb:
-	[how to get/force the player into combat]
-	first turn could be either
-	player turn- cast a spell, use a item, etc.
-	enemy turn- cast a spell, use a item, etc.
-	repeat turns
-	end
-	
-steps for rt:
-	normal gameplay- moving around, talking to people
-	enemies aggro- either player provkes or enemies do
-	combat happens- player and enemies cast spells, use items, etc.
-	end
+- turn based
+- happens in the normal world
+- can move around
+- can use environment
+- fast paced but no time pressure
+- gridless?
 
-cast spell:
-	tb- when player turn, if party then choose who, choose the spell and if party who to cast it on
-	rt-
+[ally & foe system]
 
-use item:
-	tb- when player turn, if party then choose who, choose the item and if party who to use it on
-	rt-
+mvp:
+	- flexible turn system
+	- simple combat options
+	- entry and exit
+	- multiple player characters
 
-etc: ?
+on turn: cast spell, use item, move, do action

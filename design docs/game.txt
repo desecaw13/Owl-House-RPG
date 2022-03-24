@@ -13,6 +13,4 @@ talk:
 Fishing Minigame
 
 fight:
-	witch duels- formal magical combat between two witches (like pokemon? turned based)
-	monster battles- combat between player party and monsters (like Ps:T, free action)
-	[see paper]
+	see combat.txt

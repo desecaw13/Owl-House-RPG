@@ -1,5 +1,7 @@
 Be concise and complete. Ensure that your design doc describes everything in your game, from top to bottom. If you're going to have to program it, record it, or draw it, it should be in this document. Describe the functional specifications first, and only when this is finalized should you create the technical component. Describe every algorithm you intend to employ and every solution you intend to implement.
 
+Reusable components!
+
 [Gameplay, which is the interaction between the player and the mechanics and systems.
 Mechanics and systems, which are the rules and objects in the game.
 Player experience, which is how users feel when they're playing the game.]
