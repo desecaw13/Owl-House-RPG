@@ -1,0 +1,62 @@
+Be concise and complete. Ensure that your design doc describes everything in your game, from top to bottom. If you're going to have to program it, record it, or draw it, it should be in this document. Describe the functional specifications first, and only when this is finalized should you create the technical component. Describe every algorithm you intend to employ and every solution you intend to implement.
+
+[Gameplay, which is the interaction between the player and the mechanics and systems.
+Mechanics and systems, which are the rules and objects in the game.
+Player experience, which is how users feel when they're playing the game.]
+
+https://en.wikipedia.org/wiki/Role-playing_video_game
+https://en.wikipedia.org/wiki/Isometric_video_game_graphics
+http://www.kaspermunch.xyz/isometricTileRendering/
+https://github.com/minism/love-iso
+https://github.com/Sulunia/isomap-love2d
+https://love2d.org/wiki/Tutorial:Isometric_Graphics
+https://love2d.org/forums/viewtopic.php?t=79713&p=180604
+https://www.love2d.org/forums/viewtopic.php?t=33504
+https://gist.github.com/enghqii/9c4818fa74fe5eec4329
+https://gist.github.com/sheenobu/47e80e5c25cc68a6802e
+https://www.gamasutra.com/view/feature/2280/the_guerrilla_guide_to_game_code.php
+https://web.archive.org/web/20100105171437/http://dev.koonsolo.com/9/model-view-controller-for-games/
+https://web.archive.org/web/20101006072911/http://wiki.gamedev.net:80/index.php/Observer_Pattern
+
+The observer pattern is a software design pattern in which an object, named the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods.
+
+[describe what is to be computed;
+organise the computation sequencing into small steps;
+organise memory management during the computation.]
+
+The model defines what data the app should contain. If the state of this data changes, then the model will usually notify the view (so the display can change as needed) and sometimes the controller (if different logic is needed to control the updated view).
+The view defines how the app's data should be displayed.
+The controller contains logic that updates the model and/or view in response to input from the users of the app.
+
+[shared.lua]
+
+http://www.yarrninja.com/pixeltutorial/chapter7.htm
+
+https://en.wikipedia.org/wiki/Diablo_(series)
+https://en.wikipedia.org/wiki/Fable_(2004_video_game)
+https://en.wikipedia.org/wiki/The_Legend_of_Zelda_(video_game)
+https://en.wikipedia.org/wiki/Zelda_II:_The_Adventure_of_Link
+https://en.wikipedia.org/wiki/Hades_(video_game)
+https://en.wikipedia.org/wiki/Fallout:_New_Vegas
+https://en.wikipedia.org/wiki/Planescape:_Torment
+https://www.sloperama.com/advice/lesson32.html
+https://github.com/miko/Love2d-samples
+https://github.com/bakpakin/tiny-ecs
+https://github.com/1bardesign/batteries
+https://github.com/SiENcE/love2d_gametemplate
+
+https://upload.wikimedia.org/wikipedia/commons/0/01/W3sDesign_Observer_Design_Pattern_UML.jpg
+https://upload.wikimedia.org/wikipedia/commons/a/a8/Observer_w_update.svg
+https://developer.mozilla.org/en-US/docs/Glossary/MVC/model-view-controller-light-blue.png
+https://users.infragistics.com/tsnyder/MVC%20View.jpg
+https://refactoring.guru/images/patterns/diagrams/observer/example.png?id=6d0603ab5a00e4463b81d9639cd746a2
+https://refactoring.guru/design-patterns/observer/csharp/example
+https://refactoring.guru/design-patterns/observer/python/example
+https://refactoring.guru/design-patterns/command
+https://web.archive.org/web/20100105171437/http://dev.koonsolo.com/9/model-view-controller-for-games/
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+https://en.wikipedia.org/wiki/Entity_component_system
+https://en.wikipedia.org/wiki/Action%E2%80%93domain%E2%80%93responder
+
+https://upbge.org/docs/latest/manual/_images/tutorials-getting_started-game_loop.png
+https://upbge.org/docs/latest/manual/_images/tutorials-getting_started-scene_loop.png

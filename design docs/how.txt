@@ -7,4 +7,5 @@ todo:
 	interaction with things (clicking)
 	basics of the GUI
 	dialog systems
+	allow for the burning of a dumpster
 	everything
