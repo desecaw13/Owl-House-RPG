@@ -1,7 +1,7 @@
 [witch duels- formal magical combat between two witches (turned based)
 monster battles- combat between player party and monsters (free action)]
 
-styles: D&D, PsT, undertale, wizards 101, pokemon
+styles: [Fire Emblem], D&D, PsT, undertale, wizards 101, pokemon
 
 - turn based
 - happens in the normal world
@@ -18,4 +18,4 @@ mvp:
 	- entry and exit
 	- multiple player characters
 
-on turn: cast spell, use item, move, do action
+on turn: cast spell, use item, move, do action, or ?
